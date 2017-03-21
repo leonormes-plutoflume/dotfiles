@@ -23,16 +23,19 @@ set wrapscan               " Searches wrap around end-of-file.
 set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
 call plug#begin('~/.vim/plugged')
-
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 call plug#end()
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 " Put all temporary files under the same directory.
 " https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
 set backup
-set backupdir   =$HOME/.config/nvim/files/backup/
+set backupdir   =$HOME/.vim/files/backup/
 set backupext   =-vimbackup
 set backupskip  =
-set directory   =$HOME/.config/nvim/files/swap
+set directory   =$HOME/.vim/files/swap
 set updatecount =100
 set undofile
-set undodir     =$HOME/.config/nvim/files/undo
+set undodir     =$HOME/.vim/files/undo
 set viminfo     ='100,n$HOME/.vim/files/info/viminfo'
