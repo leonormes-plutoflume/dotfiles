@@ -1,33 +1,34 @@
 set nocompatible
 let mapleader = "\<Space>"
-set laststatus  =2        
-set display     =lastline 
+set laststatus  =2
 set vb noeb nu
 set noshowmode
 set backspace   =indent,eol,start  " Make backspace work as you would expect.
 set hidden                 " Switch between buffers without having to save
 set laststatus  =2         " Always show statusline.
 set display     =lastline  " Show as much as possible of the last line.
-
 set incsearch              " Highlight while searching with / or ?.
 set hlsearch               " Keep matches highlighted.
-
 set ttyfast                " Faster redrawing.
 set lazyredraw             " Only redraw when necessary.
-
 set splitbelow             " Open new windows below the current window.
 set splitright             " Open new windows right of the current window.
-
 set cursorline             " Find the current line quickly.
 set wrapscan               " Searches wrap around end-of-file.
 set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
+syntax enable
+set background=light
+colorscheme solarized
 call plug#begin('~/.vim/plugged')
+Plug 'editorconfig/editorconfig-vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'Raimondi/delimitMate',
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 call plug#end()
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+let g:AutoPairsUseInsertedCount = 1
 " Put all temporary files under the same directory.
 " https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
 set backup
