@@ -22,7 +22,7 @@ set background=light
 colorscheme solarized
 call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized', { 'do': 'cp ~/.vim/plugged/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/' }
 Plug 'Raimondi/delimitMate',
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
