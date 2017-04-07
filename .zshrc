@@ -1,4 +1,4 @@
-alias config='/usr/bin/git --git-dir=/Users/leonormes/.cfg/ --work-tree=/Users/leonormes'
+alias config='/usr/bin/git --git-dir=/home/leon/.cfg/ --work-tree=/home/leon'
 export KEYTIMEOUT=1
 bindkey -v
 source ~/.zplug/init.zsh
@@ -21,9 +21,7 @@ if ! zplug check --verbose; then
 		echo; zplug install
 	fi
 fi
-autoload -U promptinit; promptinit
 
-prompt pure
 zplug load
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

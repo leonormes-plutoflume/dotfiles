@@ -27,6 +27,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-repeat'
 Plug 'lfilho/cosco.vim'
+Plug 'altercation/vim-colors-solarized', { 'do': 'mkdir  -p .vim/colors && cp ~/.vim/plugged/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/' }
 Plug 'Raimondi/delimitMate',
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
