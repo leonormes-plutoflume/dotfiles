@@ -22,13 +22,20 @@ set background=light
 colorscheme solarized
 call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
-Plug 'altercation/vim-colors-solarized', { 'do': 'mkdir .vim/colors && cp ~/.vim/plugged/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-repeat'
+Plug 'lfilho/cosco.vim'
+Plug 'altercation/vim-colors-solarized', { 'do': 'mkdir  -p .vim/colors && cp ~/.vim/plugged/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/' }
 Plug 'Raimondi/delimitMate',
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 call plug#end()
 let g:AutoPairsUseInsertedCount = 1
+autocmd FileType javascript,css,YOUR_LANG nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
+autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 " Put all temporary files under the same directory.
 " https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
 set backup
