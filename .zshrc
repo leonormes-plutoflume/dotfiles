@@ -1,3 +1,5 @@
+export EDITOR='vim'
+export VISUAL='vim'
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
@@ -28,6 +30,8 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "peterhurford/git-aliases.zsh"
 zplug "robertzk/send.zsh"
 zplug "supercrabtree/k"
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 zplug "RobertAudi/tsm"
 zplug "plugins/git",   from:oh-my-zsh
 if ! zplug check --verbose; then
@@ -36,8 +40,8 @@ if ! zplug check --verbose; then
 		echo; zplug install
 	fi
 fi
-
 zplug load
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/leon/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/home/leon/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
