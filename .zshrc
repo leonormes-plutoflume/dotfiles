@@ -1,4 +1,4 @@
-alias config='/usr/bin/git --git-dir=/home/leon/.cfg/ --work-tree=/home/leon'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 export KEYTIMEOUT=1
 bindkey -v
 source ~/.zplug/init.zsh
