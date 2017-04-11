@@ -1,5 +1,10 @@
 set nocompatible
 let mapleader = "\<Space>"
+
+nnoremap <C-b> :Buffers<CR>
+nnoremap <C-g>g :Ag<CR>
+nnoremap <leader><leader> :Commands<CR>
+nnoremap <C-p> :Files<CR>
 set laststatus  =2
 set vb noeb nu
 set noshowmode
@@ -17,22 +22,32 @@ set cursorline             " Find the current line quickly.
 set wrapscan               " Searches wrap around end-of-file.
 set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
-syntax enable
-set background=light
-colorscheme solarized
+
 call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'tpope/vim-repeat'
+Plug 'pangloss/vim-javascript'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/es.next.syntax.vim'
+Plug 'heavenshell/vim-jsdoc'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'othree/jsdoc-syntax.vim'
+Plug 'othree/jspc.vim'
+Plug 'SirVer/ultisnips'
 Plug 'lfilho/cosco.vim'
 Plug 'altercation/vim-colors-solarized', { 'do': 'mkdir  -p .vim/colors && cp ~/.vim/plugged/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/' }
-Plug 'Raimondi/delimitMate',
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'jiangmiao/auto-pairs'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'Valloric/YouCompleteMe', { 'do' : '~/.vim/plugged/YouCompleteMe/install.py --gocode-completer --tern-completer' }
 call plug#end()
+syntax enable
+set background=light
+colorscheme solarized
 let g:AutoPairsUseInsertedCount = 1
 autocmd FileType javascript,css,YOUR_LANG nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
@@ -47,3 +62,8 @@ set updatecount =100
 set undofile
 set undodir     =$HOME/.vim/files/undo
 set viminfo     ='100,n$HOME/.vim/files/info/viminfo'
+  " rainbow brackets
+  autocmd VimEnter * RainbowParenthesesToggle
+  autocmd Syntax * RainbowParenthesesLoadRound
+  autocmd Syntax * RainbowParenthesesLoadSquare
+  autocmd Syntax * RainbowParenthesesLoadBraces
