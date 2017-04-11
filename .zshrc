@@ -41,7 +41,13 @@ if ! zplug check --verbose; then
 	fi
 fi
 zplug load
-
+tm() {
+  local session
+  newsession=${1:-new}
+  session=$(tmux list-sessions -F "#{session_name}" | \
+    fzf --query="$1" --select-1 --exit-0) &&
+    tmux attach-session -t "$session" || tmux new-session -s $newsession
+}
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/leon/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/home/leon/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
