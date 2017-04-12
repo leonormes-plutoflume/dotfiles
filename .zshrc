@@ -1,3 +1,4 @@
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 export EDITOR='vim'
 export VISUAL='vim'
 HISTFILE="$HOME/.zsh_history"
@@ -15,7 +16,6 @@ setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
 setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
-alias config='/usr/bin/git --git-dir=/home/leon/.cfg/ --work-tree=/home/leon'
 alias tat='tmux new-session -As $(basename "$PWD" | tr . -)'
 export KEYTIMEOUT=1
 bindkey -v
@@ -43,6 +43,13 @@ if ! zplug check --verbose; then
 	fi
 fi
 zplug load
+tm() {
+  local session
+  newsession=${1:-new}
+  session=$(tmux list-sessions -F "#{session_name}" | \
+    fzf --query="$1" --select-1 --exit-0) &&
+    tmux attach-session -t "$session" || tmux new-session -s $newsession
+}
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/leon/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/home/leon/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
