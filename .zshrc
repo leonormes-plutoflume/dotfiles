@@ -16,6 +16,7 @@ setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history 
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 alias config='/usr/bin/git --git-dir=/home/leon/.cfg/ --work-tree=/home/leon'
+alias tat='tmux new-session -As $(basename "$PWD" | tr . -)'
 export KEYTIMEOUT=1
 bindkey -v
 source ~/.zplug/init.zsh
@@ -25,6 +26,7 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "rupa/z", use:z.sh
 zplug "plugins/vi-mode",   from:oh-my-zsh
 zplug "zsh-users/zsh-completions"
+zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "peterhurford/git-aliases.zsh"
@@ -41,7 +43,6 @@ if ! zplug check --verbose; then
 	fi
 fi
 zplug load
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/leon/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/home/leon/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
