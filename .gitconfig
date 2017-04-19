@@ -6,7 +6,12 @@
 [core]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
-
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
 [color]
     branch = auto
     diff = auto
