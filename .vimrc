@@ -30,14 +30,26 @@ Plug 'junegunn/fzf.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'tpope/vim-repeat'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'vim-airline/vim-airline'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'heavenshell/vim-jsdoc'
+Plug 'edkolev/tmuxline.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'othree/jsdoc-syntax.vim'
 Plug 'othree/jspc.vim'
 Plug 'SirVer/ultisnips'
+Plug 'junegunn/limelight.vim'
+" {{{
+  let g:limelight_default_coefficient = 0.7
+  let g:limelight_conceal_ctermfg = 238
+  nmap <silent> gl :Limelight!!<CR>
+  xmap gl <Plug>(Limelight)
+" }}}
 Plug 'lfilho/cosco.vim'
 Plug 'altercation/vim-colors-solarized', { 'do': 'mkdir  -p .vim/colors && cp ~/.vim/plugged/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
@@ -48,6 +60,7 @@ call plug#end()
 syntax enable
 set background=light
 colorscheme solarized
+let g:airline_theme='solarized'
 let g:AutoPairsUseInsertedCount = 1
 autocmd FileType javascript,css,YOUR_LANG nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)

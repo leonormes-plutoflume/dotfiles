@@ -16,6 +16,7 @@ setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
 setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
+alias tat='tmux new-session -As $(basename "$PWD" | tr . -)'
 export KEYTIMEOUT=1
 bindkey -v
 source ~/.zplug/init.zsh
@@ -25,6 +26,7 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "rupa/z", use:z.sh
 zplug "plugins/vi-mode",   from:oh-my-zsh
 zplug "zsh-users/zsh-completions"
+zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "peterhurford/git-aliases.zsh"
