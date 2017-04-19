@@ -6,7 +6,7 @@
 # If you want to use different themes and features,
 # you can load the corresponding files here:
 #source ~/.config/liquidprompt/nojhan.theme
-LP_PS1_FILE=~/.dotfiles/shell/liquid.ps1
+LP_PS1_FILE=~/.zplug/repos/nojhan/liquidprompt/liquid.theme
 
 #############
 # BEHAVIOUR #
@@ -143,7 +143,7 @@ LP_TIME_ANALOG=0
 LP_ENABLE_TITLE=0
 
 # Enable Title for screen and byobu
-LP_ENABLE_SCREEN_TITLE=0
+LP_ENABLE_SCREEN_TITLE=1
 
 # Use differents colors for differents hosts you SSH in
 LP_ENABLE_SSH_COLORS=0

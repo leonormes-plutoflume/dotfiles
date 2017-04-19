@@ -1,5 +1,6 @@
 set nocompatible
 let mapleader = "\<Space>"
+nnoremap <esc> :noh<return><esc>
 
 nnoremap <C-b> :Buffers<CR>
 nnoremap <C-g>g :Ag<CR>
