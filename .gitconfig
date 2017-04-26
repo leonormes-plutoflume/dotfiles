@@ -6,6 +6,7 @@
 [core]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
+	autocrlf = input
 [diff]
     tool = meld
 [difftool]
@@ -76,3 +77,5 @@
     dr  = "!f() { git diff -w "$1"^.."$1"; }; f"
     diffr  = "!f() { git diff "$1"^.."$1"; }; f"
     # }}}
+[rerere]
+	enabled = true
