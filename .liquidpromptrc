@@ -47,7 +47,7 @@ LP_USER_ALWAYS=1
 # Do you want to display the percentages of load/batteries along with their
 # corresponding marks? Set to 0 to only print the colored marks.
 # Defaults to 1 (display percentages)
-LP_PERCENTS_ALWAYS=1
+LP_PERCENTS_ALWAYS=0
 
 # Do you want to use the permissions feature?
 # Recommended value is 1
@@ -67,7 +67,7 @@ LP_ENABLE_JOBS=1
 
 # Do you want to use the load feature?
 # Recommended value is 1
-LP_ENABLE_LOAD=1
+LP_ENABLE_LOAD=0
 
 # Do you want to use the battery feature?
 # Recommended value is 1
@@ -76,7 +76,7 @@ LP_ENABLE_BATT=0
 # Do you want to use the 'sudo credentials' feature?
 # Be warned that this may pollute the syslog if you don't have sudo
 # credentials, and the sysadmin will hate you.
-LP_ENABLE_SUDO=0
+LP_ENABLE_SUDO=1
 
 # Do you want to use VCS features with the root account?
 # Recommended value is 0
@@ -88,19 +88,19 @@ LP_ENABLE_GIT=1
 
 # Do you want to use the Subversion special features?
 # Recommended value is 1
-LP_ENABLE_SVN=1
+LP_ENABLE_SVN=0
 
 # Do you want to use the Mercurial special features?
 # Recommended value is 1
-LP_ENABLE_HG=1
+LP_ENABLE_HG=0
 
 # Do you want to use the Fossil special features?
 # Recommended value is 1
-LP_ENABLE_FOSSIL=1
+LP_ENABLE_FOSSIL=0
 
 # Do you want to use the Bazaar special features?
 # Recommanded value is 1
-LP_ENABLE_BZR=1
+LP_ENABLE_BZR=0
 
 # Show time of the last prompt display
 # Recommended value is 0
@@ -123,7 +123,7 @@ LP_ENABLE_VIRTUALENV=1
 LP_ENABLE_SCLS=1
 
 # Show average system temperature
-LP_ENABLE_TEMP=1
+LP_ENABLE_TEMP=0
 
 # When showing time, use an analog clock instead of numeric values.
 # The analog clock is "accurate" to the nearest half hour.
@@ -138,7 +138,7 @@ LP_TIME_ANALOG=0
 # recommended value is 0
 # See LP_TITLE_OPEN and LP_TITLE_CLOSE to change escape characters to adapt this
 # feature to your specific terminal.
-LP_ENABLE_TITLE=0
+LP_ENABLE_TITLE=1
 
 # Enable Title for screen and byobu
 LP_ENABLE_SCREEN_TITLE=1
