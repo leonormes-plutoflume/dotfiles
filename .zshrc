@@ -33,7 +33,7 @@ zplug "peterhurford/git-aliases.zsh"
 zplug "robertzk/send.zsh"
 zplug "supercrabtree/k"
 zplug "mafredri/zsh-async", from:github
-zplug "nojhan/liquidprompt", use:liquidprompt.plugin.zsh, from:github, as:theme
+zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
 zplug "RobertAudi/tsm"
 zplug "plugins/git",   from:oh-my-zsh
 if ! zplug check --verbose; then

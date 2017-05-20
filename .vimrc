@@ -28,6 +28,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'KeitaNakamura/neodark.vim'
+Plug 'manasthakur/vim-commentor'
 Plug 'junegunn/fzf.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
