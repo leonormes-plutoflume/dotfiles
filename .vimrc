@@ -19,14 +19,16 @@ set ttyfast                " Faster redrawing.
 set lazyredraw             " Only redraw when necessary.
 set splitbelow             " Open new windows below the current window.
 set splitright             " Open new windows right of the current window.
-set cursorline             " Find the current line quickly.
 set wrapscan               " Searches wrap around end-of-file.
 set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
+set t_Co=256
 
 call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'KeitaNakamura/neodark.vim'
+Plug 'manasthakur/vim-commentor'
 Plug 'junegunn/fzf.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
@@ -52,16 +54,18 @@ Plug 'junegunn/limelight.vim'
   xmap gl <Plug>(Limelight)
 " }}}
 Plug 'lfilho/cosco.vim'
-Plug 'altercation/vim-colors-solarized', { 'do': 'mkdir  -p .vim/colors && cp ~/.vim/plugged/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/' }
+" Plug 'altercation/vim-colors-solarized', { 'do': 'mkdir  -p .vim/colors && cp ~/.vim/plugged/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'Valloric/YouCompleteMe', { 'do' : '~/.vim/plugged/YouCompleteMe/install.py --gocode-completer --tern-completer' }
 call plug#end()
 syntax enable
-set background=light
-colorscheme solarized
-let g:airline_theme='solarized'
+colorscheme neodark
+let g:neodark#terminal_transparent = 1 " default: 0
+let g:neodark#solid_vertsplit = 1 " default: 0
+let g:lightline = {}
+let g:lightline.colorscheme = 'neodark'
 let g:AutoPairsUseInsertedCount = 1
 autocmd FileType javascript,css,YOUR_LANG nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
