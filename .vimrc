@@ -26,15 +26,17 @@ set t_Co=256
 
 call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'alvan/vim-closetag'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'manasthakur/vim-commentor'
 Plug 'junegunn/fzf.vim'
-Plug 'altercation/vim-colors-solarized'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'mattn/emmet-vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vim-airline/vim-airline'
 Plug 'pangloss/vim-javascript'
@@ -46,13 +48,6 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'othree/jsdoc-syntax.vim'
 Plug 'othree/jspc.vim'
 Plug 'SirVer/ultisnips'
-Plug 'junegunn/limelight.vim'
-" {{{
-  let g:limelight_default_coefficient = 0.7
-  let g:limelight_conceal_ctermfg = 238
-  nmap <silent> gl :Limelight!!<CR>
-  xmap gl <Plug>(Limelight)
-" }}}
 Plug 'lfilho/cosco.vim'
 " Plug 'altercation/vim-colors-solarized', { 'do': 'mkdir  -p .vim/colors && cp ~/.vim/plugged/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
@@ -69,6 +64,8 @@ let g:lightline.colorscheme = 'neodark'
 let g:AutoPairsUseInsertedCount = 1
 autocmd FileType javascript,css,YOUR_LANG nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
+" filenames like *.xml, *.html, *.xhtml, ...
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
 " Put all temporary files under the same directory.
 " https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
 set backup
@@ -80,8 +77,8 @@ set updatecount =100
 set undofile
 set undodir     =$HOME/.vim/files/undo
 set viminfo     ='100,n$HOME/.vim/files/info/viminfo'
-  " rainbow brackets
-  autocmd VimEnter * RainbowParenthesesToggle
-  autocmd Syntax * RainbowParenthesesLoadRound
-  autocmd Syntax * RainbowParenthesesLoadSquare
-  autocmd Syntax * RainbowParenthesesLoadBraces
+" rainbow brackets
+autocmd VimEnter * RainbowParenthesesToggle
+autocmd Syntax * RainbowParenthesesLoadRound
+autocmd Syntax * RainbowParenthesesLoadSquare
+autocmd Syntax * RainbowParenthesesLoadBraces
