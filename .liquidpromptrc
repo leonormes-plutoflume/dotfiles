@@ -16,8 +16,7 @@ LP_BATTERY_THRESHOLD=75
 
 # Minimal value after which the load average is displayed
 # Recommended value is 60
-LP_LOAD_THRESHOLD=60
-
+LP_ENABLE_LOAD=0
 # Minimal value after which the temperature is displayed (in degrees Celsius)
 # Recommended value is 60
 LP_TEMP_THRESHOLD=60
@@ -48,6 +47,7 @@ LP_USER_ALWAYS=1
 # corresponding marks? Set to 0 to only print the colored marks.
 # Defaults to 1 (display percentages)
 LP_PERCENTS_ALWAYS=0
+LP_ENABLE_TITLE=1
 
 # Do you want to use the permissions feature?
 # Recommended value is 1
