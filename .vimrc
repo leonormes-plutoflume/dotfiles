@@ -28,25 +28,19 @@ call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'alvan/vim-closetag'
-Plug 'jelera/vim-javascript-syntax'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'manasthakur/vim-commentor'
 Plug 'junegunn/fzf.vim'
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/emmet-vim'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'pangloss/vim-javascript'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'othree/es.next.syntax.vim'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'edkolev/tmuxline.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'othree/jsdoc-syntax.vim'
-Plug 'othree/jspc.vim'
 Plug 'SirVer/ultisnips'
 Plug 'lfilho/cosco.vim'
 " Plug 'altercation/vim-colors-solarized', { 'do': 'mkdir  -p .vim/colors && cp ~/.vim/plugged/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/' }
@@ -56,12 +50,6 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'Valloric/YouCompleteMe', { 'do' : '~/.vim/plugged/YouCompleteMe/install.py --gocode-completer --tern-completer' }
 call plug#end()
 syntax enable
-colorscheme neodark
-let g:neodark#terminal_transparent = 1 " default: 0
-let g:neodark#solid_vertsplit = 1 " default: 0
-let g:lightline = {}
-let g:lightline.colorscheme = 'neodark'
-let g:AutoPairsUseInsertedCount = 1
 autocmd FileType javascript,css,YOUR_LANG nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 " filenames like *.xml, *.html, *.xhtml, ...
