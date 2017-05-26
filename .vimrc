@@ -22,38 +22,47 @@ set splitright             " Open new windows right of the current window.
 set wrapscan               " Searches wrap around end-of-file.
 set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
-set t_Co=256
+set t_Co=16
 
 call plug#begin('~/.vim/plugged')
-Plug 'editorconfig/editorconfig-vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'alvan/vim-closetag'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'KeitaNakamura/neodark.vim'
-Plug 'manasthakur/vim-commentor'
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-repeat'
+" Syntax and Themes
+Plug 'othree/yajs.vim'
+Plug 'elzr/vim-json'
+Plug 'othree/es.next.syntax.vim'
+Plug 'altercation/vim-colors-solarized', { 'do': 'mkdir  -p .vim/colors && cp ~/.vim/plugged/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
+
+" JSDoc auto-snippets
+Plug 'heavenshell/vim-jsdoc'
+
+Plug 'jiangmiao/auto-pairs'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'heavenshell/vim-jsdoc'
-Plug 'edkolev/tmuxline.vim'
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'othree/jsdoc-syntax.vim'
 Plug 'SirVer/ultisnips'
 Plug 'lfilho/cosco.vim'
-" Plug 'altercation/vim-colors-solarized', { 'do': 'mkdir  -p .vim/colors && cp ~/.vim/plugged/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/' }
+" Auto-complete
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'jiangmiao/auto-pairs'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'Valloric/YouCompleteMe', { 'do' : '~/.vim/plugged/YouCompleteMe/install.py --gocode-completer --tern-completer' }
+Plug 'othree/jspc.vim'
 call plug#end()
+let g:solarized_termcolors=256
 syntax enable
-autocmd FileType javascript,css,YOUR_LANG nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
-autocmd FileType javascript,css,YOUR_LANG imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
+set background=dark
+colorscheme solarized
+autocmd FileType javascript,css nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
+autocmd FileType javascript,css imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
+" pangloss/vim-javascript settings
+let g:javascript_plugin_jsdoc = 1
+" javascript-libraries-syntax
+let g:used_javascript_libs = 'chai,jquery'
 " filenames like *.xml, *.html, *.xhtml, ...
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
 " Put all temporary files under the same directory.
 " https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
 set backup
@@ -65,8 +74,3 @@ set updatecount =100
 set undofile
 set undodir     =$HOME/.vim/files/undo
 set viminfo     ='100,n$HOME/.vim/files/info/viminfo'
-" rainbow brackets
-autocmd VimEnter * RainbowParenthesesToggle
-autocmd Syntax * RainbowParenthesesLoadRound
-autocmd Syntax * RainbowParenthesesLoadSquare
-autocmd Syntax * RainbowParenthesesLoadBraces
