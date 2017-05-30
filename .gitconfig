@@ -32,7 +32,7 @@
 	plain = white
 
 [color "status"]
-	added = green
+	added = yellow
 	changed = red
 	untracked = cyan
 

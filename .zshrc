@@ -1,6 +1,8 @@
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 export EDITOR='vim'
-export VISUAL='vim'
+export USE_EDITOR=$EDITOR
+export TERM="xterm-256color"
+export VISUAL=$EDITOR
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
@@ -16,7 +18,8 @@ setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
 setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
-alias tat='tmux new-session -As $(basename "$PWD" | tr . -)'
+setopt CORRECT
+alias tat='tmux -2 new-session -As $(basename "$PWD" | tr . -)'
 export KEYTIMEOUT=1
 bindkey -v
 source ~/.zplug/init.zsh
