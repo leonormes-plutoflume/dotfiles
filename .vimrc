@@ -22,7 +22,7 @@ set splitright             " Open new windows right of the current window.
 set wrapscan               " Searches wrap around end-of-file.
 set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
-set t_Co=16
+set t_Co=256
 
 call plug#begin('~/.vim/plugged')
 " Syntax and Themes
