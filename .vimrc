@@ -45,6 +45,7 @@ set background=dark
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
+Plug 'ericpruitt/tmux.vim', {'rtp': 'vim/'}
 let g:airline_theme='solarized'
 Plug 'othree/javascript-libraries-syntax.vim'
 let g:used_javascript_libs = 'chai,jquery'
