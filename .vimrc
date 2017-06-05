@@ -52,6 +52,7 @@ let g:used_javascript_libs = 'chai,jquery'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'elzr/vim-json'
+Plug 'alvan/vim-closetag'
 syntax enable
 
 " JSDoc auto-snippets
