@@ -1,5 +1,19 @@
 set nocompatible
 let mapleader = "\<Space>"
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+" for json
+autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+" for jsx
+autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
+autocmd FileType json vnoremap <buffer> <c-f> :call RangeJsonBeautify()<cr>
+autocmd FileType jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 nnoremap <esc> :noh<return><esc>
 " fzf
 nnoremap <C-b> :Buffers<CR>
@@ -37,6 +51,8 @@ set updatecount =100
 set undofile
 set undodir     =$HOME/.vim/files/undo
 set viminfo     ='100,n$HOME/.vim/files/info/viminfo'
+:vmap ,x :!tidy -q -i --show-errors 0<CR>
+:setlocal equalprg=tidy\ -quiet\ --show-errors\ 0
 call plug#begin('~/.vim/plugged')
 " Syntax and Themes
 Plug 'goatslacker/mango.vim'
@@ -45,6 +61,19 @@ set background=dark
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
+let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
+      \ }
 Plug 'ericpruitt/tmux.vim', {'rtp': 'vim/'}
 let g:airline_theme='solarized'
 Plug 'othree/javascript-libraries-syntax.vim'
@@ -52,6 +81,7 @@ let g:used_javascript_libs = 'chai,jquery'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'elzr/vim-json'
+Plug 'maksimr/vim-jsbeautify'
 syntax enable
 
 " JSDoc auto-snippets
@@ -84,8 +114,13 @@ let g:fzf_colors =
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
 Plug 'mattn/emmet-vim'
+Plug 'Valloric/MatchTagAlways'
+Plug 'alvan/vim-closetag'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 " Add ; or ,
 Plug 'lfilho/cosco.vim'
 autocmd FileType javascript,css nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
@@ -98,4 +133,5 @@ Plug 'Valloric/YouCompleteMe', { 'do' : '~/.vim/plugged/YouCompleteMe/install.py
 Plug 'othree/jspc.vim'
 call plug#end()
 colorscheme mango
-
+:let g:html_indent_script1 = "inc"
+:let g:html_indent_style1 = "inc"

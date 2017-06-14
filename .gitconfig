@@ -10,7 +10,9 @@
 	pager = less -r
 [diff]
 	algorithm = histogram
+	tool = meld
 [difftool]
+	prompt = false
 	prompt = false
 [difftool "meld"]
 	cmd = meld "$LOCAL" "$REMOTE"
@@ -78,3 +80,5 @@
 	# }}}
 [rerere]
 	enabled = true
+[merge]
+	tool = meld
