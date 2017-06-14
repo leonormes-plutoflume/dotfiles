@@ -22,6 +22,7 @@ nnoremap <silent> -- <C-w>S
 nnoremap <C-g>g :Ag<CR>
 nnoremap <leader><leader> :Commands<CR>
 nnoremap <C-p> :Files<CR>
+let g:user_emmet_leader_key='<C-Z>'
 set laststatus  =2
 set vb noeb nu
 set noshowmode
@@ -82,6 +83,8 @@ let g:used_javascript_libs = 'chai,jquery'
 Plug 'sheerun/vim-polyglot'
 Plug 'elzr/vim-json'
 Plug 'maksimr/vim-jsbeautify'
+Plug 'alvan/vim-closetag'
+Plug 'mattn/webapi-vim'
 syntax enable
 
 " JSDoc auto-snippets
