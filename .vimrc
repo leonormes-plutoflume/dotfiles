@@ -76,7 +76,7 @@ let g:airline_mode_map = {
       \ '' : 'S',
       \ }
 Plug 'ericpruitt/tmux.vim', {'rtp': 'vim/'}
-let g:airline_theme='solarized'
+let g:airline_theme='molokai'
 Plug 'othree/javascript-libraries-syntax.vim'
 let g:used_javascript_libs = 'chai,jquery'
 
@@ -118,6 +118,7 @@ let g:fzf_buffers_jump = 1
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
 Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-commentary'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-repeat'
