@@ -92,6 +92,7 @@ Plug 'heavenshell/vim-jsdoc'
 Plug 'moll/vim-node'
 Plug 'jiangmiao/auto-pairs'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'justinmk/vim-sneak'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
