@@ -8,6 +8,8 @@
 	path =
 	autocrlf = input
 	pager = less -r
+[merge]
+	tool = meld
 [diff]
 	algorithm = histogram
 	tool = meld
@@ -86,5 +88,3 @@
 	# }}}
 [rerere]
 	enabled = true
-[merge]
-	tool = meld
