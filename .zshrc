@@ -1,4 +1,5 @@
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+export PATH=/opt/mongodb/mongodb-linux-x86_64-3.4.7/bin/:$PATH
 export EDITOR='vim'
 export USE_EDITOR=$EDITOR
 export TERM="xterm-256color"
