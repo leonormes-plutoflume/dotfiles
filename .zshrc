@@ -1,4 +1,5 @@
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+fpath=(~/.zsh/completion $fpath)
 export SHELL="/bin/zsh"
 export EDITOR='vim'
 export USE_EDITOR=$EDITOR
@@ -64,4 +65,4 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+autoload -Uz compinit && compinit -i
