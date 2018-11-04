@@ -1,11 +1,4 @@
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-<<<<<<< HEAD
-export PATH=/opt/mongodb/mongodb-linux-x86_64-3.4.7/bin/:$PATH
-export EDITOR='vim'
-export USE_EDITOR=$EDITOR
-export TERM="xterm-256color"
-export VISUAL=$EDITOR
-=======
 fpath=(~/.zsh/completion $fpath)
 export SHELL="/bin/zsh"
 export EDITOR='code'
@@ -14,7 +7,6 @@ export TERM="xterm-256color"
 export VISUAL=$EDITOR
 LC_CTYPE=en_GB.UTF-8
 LC_ALL=en_GB.UTF-8
->>>>>>> 31f3886b022dac13bd93a329f289313b2e5b7a53
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
@@ -64,21 +56,6 @@ tm() {
     fzf --query="$1" --select-1 --exit-0) &&
     tmux attach-session -t "$session" || tmux new-session -s $newsession
 }
-<<<<<<< HEAD
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/leon/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/home/leon/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/leon/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/leon/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-export PATH=$HOME/.cargo/bin:$PATH
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git,node_modules,yarn.lock}/*"'
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-=======
 export PATH=$HOME/.cargo/bin:$PATH
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
@@ -103,4 +80,3 @@ fo() {
     [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
   fi
 }
->>>>>>> 31f3886b022dac13bd93a329f289313b2e5b7a53
