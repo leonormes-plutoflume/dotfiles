@@ -54,6 +54,7 @@
 	cot = checkout --track
 	ppm = !git pull --rebase && git push origin master
 	br = branch
+	rso = remote show origin
 	r = reset
 	cp = cherry-pick
 	gr = grep -Ii
