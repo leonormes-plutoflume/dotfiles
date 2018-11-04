@@ -45,34 +45,15 @@ if ! zplug check --verbose; then
 	fi
 fi
 zplug load
-tm() {
-  local session
-  session=$(tmux list-sessions -F "#{session_name}" | \
-    fzf --query="$1" --select-1 --exit-0) &&
-    tmux attach-session -t "$session" || tmux new-session -s $newsession
-}
-export PATH=$HOME/.cargo/bin:$PATH
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS='--height=70%' 
+export FZF_DEFAULT_OPTS='--height=70% --color fg:-1,bg:-1,hl:230,fg+:3,bg+:233,hl+:229
+--color info:150,prompt:110,spinner:150,pointer:167,marker:174' 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 autoload -Uz compinit && compinit -i
-
-# Modified version where you can press
-#   - CTRL-O to open with `open` command,
-#   - CTRL-E or Enter key to open with the $EDITOR
-fo() {
-  local out file key
-  IFS=$'\n' out=($(fzf-tmux --query="$1" --exit-0 --expect=ctrl-o,ctrl-e))
-  key=$(head -1 <<< "$out")
-  file=$(head -2 <<< "$out" | tail -1)
-  if [ -n "$file" ]; then
-    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
-  fi
-}
 
 # fuzzy grep open via ag with line number
 vg() {
