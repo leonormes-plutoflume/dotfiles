@@ -23,7 +23,6 @@ setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history 
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt CORRECT
-alias tat='tmux -2 new-session -As $(basename "$PWD" | tr . -)'
 export KEYTIMEOUT=1
 bindkey -v
 source ~/.zplug/init.zsh
@@ -36,13 +35,9 @@ zplug "zsh-users/zsh-completions"
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "peterhurford/git-aliases.zsh"
-zplug "robertzk/send.zsh"
 zplug "supercrabtree/k"
 zplug "mafredri/zsh-async", from:github
 zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
-zplug "RobertAudi/tsm"
-zplug "plugins/git",   from:oh-my-zsh
 if ! zplug check --verbose; then
 	printf "Install? [y/N]: "
 	if read -q; then
