@@ -61,7 +61,7 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height=70% --preview="bat {}" --preview-window=right:60%:wrap'
-export FZF_DEFAULT_COMMAND='ag -a'
+export FZF_DEFAULT_COMMAND='ag --nobreak --nonumbers --noheading .'
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
