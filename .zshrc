@@ -1,7 +1,7 @@
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 fpath=(~/.zsh/completion $fpath)
 export SHELL="/bin/zsh"
-export EDITOR='vim'
+export EDITOR='code'
 export USE_EDITOR=$EDITOR
 export TERM="xterm-256color"
 export VISUAL=$EDITOR
@@ -60,9 +60,23 @@ export PATH=$HOME/.cargo/bin:$PATH
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git,node_modules,yarn.lock}/*"'
-
+export FZF_DEFAULT_OPTS='--height=70% --preview="bat {}" --preview-window=right:60%:wrap'
+export FZF_DEFAULT_COMMAND='ag -a'
+export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 autoload -Uz compinit && compinit -i
+
+# Modified version where you can press
+#   - CTRL-O to open with `open` command,
+#   - CTRL-E or Enter key to open with the $EDITOR
+fo() {
+  local out file key
+  IFS=$'\n' out=($(fzf-tmux --query="$1" --exit-0 --expect=ctrl-o,ctrl-e))
+  key=$(head -1 <<< "$out")
+  file=$(head -2 <<< "$out" | tail -1)
+  if [ -n "$file" ]; then
+    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
+  fi
+}
