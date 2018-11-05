@@ -2,8 +2,8 @@ source ~/aws_mta_staging_creds.sh
 source ~/.zplug/init.zsh
 fpath=(~/.zsh/completion $fpath)
 export SHELL="/bin/zsh"
-export FZF_DEFAULT_OPTS='--height=70% --color fg:-1,bg:-1,hl:230,fg+:3,bg+:233,hl+:229
---color info:150,prompt:110,spinner:150,pointer:167,marker:174'
+export FZF_DEFAULT_OPTS='--height=70% --color fg:252,bg:233,hl:67,fg+:252,bg+:235,hl+:81
+--color info:144,prompt:161,spinner:135,pointer:135,marker:118'
 export EDITOR='code'
 export USE_EDITOR=$EDITOR
 export TERM="xterm-256color"
