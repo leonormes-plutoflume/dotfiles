@@ -1,12 +1,9 @@
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/aws_mta_staging_creds.sh
 source ~/.zplug/init.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fpath=(~/.zsh/completion $fpath)
 export SHELL="/bin/zsh"
-export FZF_DEFAULT_OPTS='--height=70% --color fg:-1,bg:-1,hl:230,fg+:3,bg+:233,hl+:229
---color info:150,prompt:110,spinner:150,pointer:167,marker:174'
+export FZF_DEFAULT_OPTS='--height=70% --color fg:252,bg:233,hl:67,fg+:252,bg+:235,hl+:81
+--color info:144,prompt:161,spinner:135,pointer:135,marker:118'
 export EDITOR='code'
 export USE_EDITOR=$EDITOR
 export TERM="xterm-256color"
@@ -20,6 +17,7 @@ export NVM_DIR="$HOME/.nvm"
 # Aliases
 alias sshout="ssh -i files/staging/ssh_keys/mta-staging-common.key core@ec2-52-50-178-80.eu-west-1.compute.amazonaws.com"
 alias sshjou="ssh -i files/staging/ssh_keys/mta-staging-common.key core@ec2-34-245-246-119.eu-west-1.compute.amazonaws.com"
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias deploy12="ansible-playbook mta-tenant.yml -e ENVIRONMENT=staging -e TENANT=quivertest12"
 alias ls='ls --color'
 alias la='ls -alF'
@@ -54,7 +52,6 @@ zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
 eval "$(dircolors -b)"
-eval "$(fasd --init auto)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -72,6 +69,7 @@ zplug "plugins/vi-mode",   from:oh-my-zsh
 zplug 'so-fancy/diff-so-fancy'
 zplug "zdharma/history-search-multi-word"
 zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting"
@@ -99,3 +97,5 @@ vg() {
      code -g "$file:$line"
   fi
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
