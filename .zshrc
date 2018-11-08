@@ -2,7 +2,7 @@ source ~/aws_mta_staging_creds.sh
 source ~/.zplug/init.zsh
 fpath=(~/.zsh/completion $fpath)
 export SHELL="/bin/zsh"
-export FZF_DEFAULT_OPTS='--height=70% --color fg:252,bg:233,hl:67,fg+:252,bg+:235,hl+:81
+export FZF_DEFAULT_OPTS='--height=30% --color fg:252,bg:233,hl:67,fg+:252,bg+:235,hl+:81
 --color info:144,prompt:161,spinner:135,pointer:135,marker:118'
 export EDITOR='code'
 export USE_EDITOR=$EDITOR
@@ -21,6 +21,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias deploy12="ansible-playbook mta-tenant.yml -e ENVIRONMENT=staging -e TENANT=quivertest12"
 alias ls='ls --color'
 alias la='ls -alF'
+alias k='k -a'
 
 LC_CTYPE=en_GB.UTF-8
 LC_ALL=en_GB.UTF-8
@@ -44,8 +45,6 @@ setopt NO_FLOW_CONTROL
 bindkey -v
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey '^T' fzf-completion
-bindkey '^I' $fzf_default_completion
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
