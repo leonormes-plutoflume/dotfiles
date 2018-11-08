@@ -19,7 +19,6 @@ alias sshout="ssh -i files/staging/ssh_keys/mta-staging-common.key core@ec2-52-5
 alias sshjou="ssh -i files/staging/ssh_keys/mta-staging-common.key core@ec2-34-245-246-119.eu-west-1.compute.amazonaws.com"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias deploy12="ansible-playbook mta-tenant.yml -e ENVIRONMENT=staging -e TENANT=quivertest12"
-alias ls='ls --color'
 alias la='ls -alF'
 alias k='k -a'
 
