@@ -21,7 +21,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias deploy12="ansible-playbook mta-tenant.yml -e ENVIRONMENT=staging -e TENANT=quivertest12"
 alias ls='ls --color'
 alias la='ls -alF'
-alias k='k -a'
 
 LC_CTYPE=en_GB.UTF-8
 LC_ALL=en_GB.UTF-8
