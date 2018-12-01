@@ -173,7 +173,7 @@ assign [class="Chromium-browser"] $ws9
 assign [class="Code"] $ws1
 assign [class="GitKraken"] $ws3
 assign [class="Slack"] $ws2
-assign [class="tilix"] $ws8
+assign [class="Tilix"] $ws8
 
 exec killall -q gdm
 exec chromium-browser
@@ -209,6 +209,8 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
+exec_always "setxkbmap -layout gb"
+exec_always "setxkbmap -option ctrl:swapcaps"
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {

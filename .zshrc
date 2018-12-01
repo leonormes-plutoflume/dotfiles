@@ -4,7 +4,9 @@ fpath=(~/.zsh/completion $fpath)
 export SHELL="/bin/zsh"
 export FZF_DEFAULT_OPTS='--height=30% --color fg:252,bg:233,hl:67,fg+:252,bg+:235,hl+:81
 --color info:144,prompt:161,spinner:135,pointer:135,marker:118'
-export EDITOR='code'
+export VIMCONFIG="$HOME/.vim/"
+export VIMDATA="$HOME/.local/share/vim"
+export EDITOR='nvim'
 export USE_EDITOR=$EDITOR
 export TERM="xterm-256color"
 export VISUAL=$EDITOR

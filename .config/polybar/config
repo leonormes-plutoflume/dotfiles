@@ -44,22 +44,22 @@ label-mode-padding = 2
 label-mode-foreground = #282a2e
 label-mode-background = #1d1f21
 
-label-focused = %index%
+label-focused = %name%
 label-focused-background = #5f819d
 label-focused-foreground = #1d1f21
 label-focused-padding = 2
 
-label-unfocused = %index%
+label-unfocused = %name%
 label-unfocused-background = #81a2be
 label-unfocused-foreground = #1d1f21
 label-unfocused-padding = 2
 
-label-visible = %index%
+label-visible = %name%
 label-visible-background = #81a2be
 label-visible-foreground = #1d1f21
 label-visible-padding = 2
 
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-background = #BA2922
 label-urgent-padding = 2
 
