@@ -23,6 +23,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias deploy12="ansible-playbook mta-tenant.yml -e ENVIRONMENT=staging -e TENANT=quivertest12"
 alias la='ls -alF'
 alias hh='hstr'
+alias vim='nvim'
 LC_CTYPE=en_GB.UTF-8
 LC_ALL=en_GB.UTF-8
 HISTFILE="$HOME/.zsh_history"
