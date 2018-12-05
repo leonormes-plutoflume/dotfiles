@@ -2,6 +2,7 @@ packadd minpac
 call minpac#init()
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('w0rp/ale')
+call minpac#add('morhetz/gruvbox')
 call minpac#add('leafgarland/typescript-vim')
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-dispatch')
@@ -24,3 +25,4 @@ nmap <silent> [w <Plug>(ale_previous)
 nmap <silent> ]w <Plug>(ale_next)
 nmap <silent> ]W <Plug>(ale_last)
 set number
+colorscheme gruvbox

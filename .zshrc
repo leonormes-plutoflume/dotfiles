@@ -15,9 +15,6 @@ export KEYTIMEOUT=1
 export PATH="$HOME/.local/:/usr/share/applications:$PATH"
 export PATH=$PATH:$VIMCONFIG/pack/bundle/start/fzf/bin
 export NVM_DIR="$HOME/.nvm"
-case $- in *i*)
-    [ -z "$TMUX" ] && exec tmux
-esac
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export HSTR_CONFIG=keywords-matching,hicolor,prompt-bottom
