@@ -9,7 +9,7 @@ bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
-font xft:URWGothic-Book 11
+font pango:Hack 8
 
 floating_modifier $mod
 
@@ -202,11 +202,11 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
 
 # Theme colors
-client.focused #c5c8c6 #1d1f21 #c5c8c6 #81a2be #81a2be
-client.focused_inactive #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
-client.unfocused #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
-client.urgent #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
-client.placeholder #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+#client.focused #c5c8c6 #1d1f21 #c5c8c6 #81a2be #81a2be
+#client.focused_inactive #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+#client.unfocused #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+#client.urgent #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+#client.placeholder #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
 
 client.background #1d1f21
 
@@ -252,3 +252,26 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+# set primary gruvbox colorscheme colors
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+# green gruvbox
+# class                 border|backgr|text|indicator|child_border
+#client.focused          $green $green $darkgray $purple $darkgray
+#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+#client.urgent           $red $red $white $red $red
+
+# blue gruvbox
+# class                 border|backgr|text|indicator|child_border
+client.focused          $blue $blue $darkgray $purple $darkgray
+client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.urgent           $red $red $white $red $red
