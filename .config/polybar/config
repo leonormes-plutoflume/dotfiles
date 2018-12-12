@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ;=====================================================
 ;
 ;   To learn more about how to configure Polybar
@@ -37,7 +36,6 @@ line-color = #f00
 
 border-size = 0
 ;border-color = #00000000
-=======
 [bar/i3wmthemer_bar]
 monitor = ${env:MONITOR:}
 width = 100%
@@ -56,12 +54,10 @@ border-color =
 
 padding-left = 0
 padding-right = 2
->>>>>>> d40ae02987599577fd2ff0c9a7e37573be4b3426
 
 module-margin-left = 1
 module-margin-right = 2
 
-<<<<<<< HEAD
 font-0=Font Awesome:size=12;0
 font-1=fixed:pixelsize=10;1
 font-2=siji:pixelsize=10;1
@@ -85,7 +81,6 @@ tray-padding = 2
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
-=======
 font-0 = "Source Code Pro Semibold:size=10;1"
 font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
 font-2 = "Font Awesome 5 Brands:size=10;1"
@@ -96,12 +91,10 @@ modules-right = date powermenu
 
 tray-position =
 ;tray-padding =
->>>>>>> d40ae02987599577fd2ff0c9a7e37573be4b3426
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-<<<<<<< HEAD
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
@@ -151,14 +144,11 @@ label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
-=======
->>>>>>> d40ae02987599577fd2ff0c9a7e37573be4b3426
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-<<<<<<< HEAD
 fuzzy-match = true
 
 ; Only show workspaces on the same output as the bar
@@ -269,7 +259,6 @@ format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = no wifi
 ;label-disconnected-foreground = ${colors.foreground-alt}
-=======
 
 label-mode-padding = 2
 label-mode-foreground = #282a2e
@@ -313,14 +302,12 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = #1d1f21
->>>>>>> d40ae02987599577fd2ff0c9a7e37573be4b3426
 
 [module/eth]
 type = internal/network
 interface = enp0s3
 interval = 3.0
 
-<<<<<<< HEAD
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
@@ -332,7 +319,6 @@ format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = no eth
 ;label-disconnected-foreground = ${colors.foreground-alt}
-=======
 format-connected-padding = 2
 format-connected-foreground = #1d1f21
 format-connected-background = #81a2be
@@ -341,13 +327,11 @@ format-connected-prefix-foreground = #1d1f21
 label-connected = %local_ip%
 
 format-disconnected =
->>>>>>> d40ae02987599577fd2ff0c9a7e37573be4b3426
 
 [module/date]
 type = internal/date
 interval = 5
 
-<<<<<<< HEAD
 date = "%a, %b %e, %Y"
 ;date-alt = " %Y-%m-%d"
 
@@ -417,7 +401,6 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
-=======
 date =
 date-alt = " %Y-%m-%d"
 
@@ -430,7 +413,6 @@ format-background = #81a2be
 format-padding = 2
 
 label = %date% %time%
->>>>>>> d40ae02987599577fd2ff0c9a7e37573be4b3426
 
 [module/powermenu]
 type = custom/menu
@@ -438,7 +420,6 @@ type = custom/menu
 expand-right = true
 
 format-spacing = 1
-<<<<<<< HEAD
 format-underline = ${colors.secondary} 
 
 label-open = Power 
@@ -447,7 +428,6 @@ label-close =  cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
-=======
 
 label-open = 
 label-open-foreground = #81a2be
@@ -455,22 +435,17 @@ label-close =  cancel
 label-close-foreground = #81a2be
 label-separator = |
 label-separator-foreground = #81a2be
->>>>>>> d40ae02987599577fd2ff0c9a7e37573be4b3426
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
 menu-0-1 = power off
 menu-0-1-exec = menu-open-2
-<<<<<<< HEAD
-=======
 menu-0-2 = log off
 menu-0-2-exec = menu-open-3
->>>>>>> d40ae02987599577fd2ff0c9a7e37573be4b3426
 
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
-<<<<<<< HEAD
 menu-1-1-exec = sudo reboot
 
 menu-2-0 = power off
@@ -490,7 +465,6 @@ margin-top = 5
 margin-bottom = 5
 
 ; vim:ft=dosini
-=======
 menu-1-1-exec = reboot
 
 menu-2-0 = power off
@@ -509,4 +483,3 @@ screenchange-reload = true
 [global/wm]
 margin-top = 0
 margin-bottom = 0
->>>>>>> d40ae02987599577fd2ff0c9a7e37573be4b3426
