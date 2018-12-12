@@ -4,12 +4,16 @@ fpath=(~/.zsh/completion $fpath)
 export SHELL="/bin/zsh"
 export FZF_DEFAULT_OPTS='--height=30% --color fg:252,bg:233,hl:67,fg+:252,bg+:235,hl+:81
 --color info:144,prompt:161,spinner:135,pointer:135,marker:118'
-export EDITOR='code'
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export VIMCONFIG="$HOME/.config/nvim"
+export VIMDATA="$HOME/.local/share/nvim"
+export EDITOR='nvim'
 export USE_EDITOR=$EDITOR
 export TERM="xterm-256color"
 export VISUAL=$EDITOR
 export KEYTIMEOUT=1
 export PATH="$HOME/.local/:/usr/share/applications:$PATH"
+export PATH=$PATH:$VIMCONFIG/pack/bundle/start/fzf/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -21,6 +25,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias deploy12="ansible-playbook mta-tenant.yml -e ENVIRONMENT=staging -e TENANT=quivertest12"
 alias la='ls -alF'
 alias hh='hstr'
+alias vim='nvim'
 LC_CTYPE=en_GB.UTF-8
 LC_ALL=en_GB.UTF-8
 HISTFILE="$HOME/.zsh_history"
