@@ -4,12 +4,16 @@ call minpac#add('junegunn/fzf.vim')
 call minpac#add('w0rp/ale')
 call minpac#add('morhetz/gruvbox')
 call minpac#add('vimlab/split-term.vim')
+call minpac#add('parsonsmatt/intero-neovim')
+call minpac#add('neovimhaskell/haskell-vim')
 call minpac#add('leafgarland/typescript-vim')
 call minpac#add('tpope/vim-fugitive')
+call minpac#add('mhinz/vim-grepper')
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('prettier/vim-prettier')
 call minpac#add('christoomey/vim-tmux-navigator')
 call minpac#add('radenling/vim-dispatch-neovim')
+call minpac#add('neomake/neomake')
 call minpac#add('k-takata/minpac', {'type':'opt'})
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-scriptease', {'type':'opt'})
@@ -32,7 +36,6 @@ nmap <silent> [W <Plug>(ale_first)
 nmap <silent> [w <Plug>(ale_previous)
 nmap <silent> ]w <Plug>(ale_next)
 nmap <silent> ]W <Plug>(ale_last)
-set number
 colorscheme gruvbox
 set background=dark    " Setting dark mode
 " Customize fzf colors to match your color scheme
@@ -50,3 +53,18 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+syntax on
+filetype plugin indent on
+
+set nocompatible
+set number
+set showmode
+set smartcase
+set smarttab
+set smartindent
+set autoindent
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set background=dark
+set laststatus=0

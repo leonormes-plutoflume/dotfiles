@@ -19,6 +19,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export HSTR_CONFIG=keywords-matching,hicolor,prompt-bottom
 # Aliases
+alias aptupgrade="sudo apt update -y;sudo apt full-upgrade -y; sudo apt autoremove -y"
 alias sshout="ssh -i files/staging/ssh_keys/mta-staging-common.key core@ec2-52-50-178-80.eu-west-1.compute.amazonaws.com"
 alias sshjou="ssh -i files/staging/ssh_keys/mta-staging-common.key core@ec2-34-245-246-119.eu-west-1.compute.amazonaws.com"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
