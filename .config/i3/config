@@ -1,14 +1,5 @@
 set $mod Mod1
 
-new_window pixel 1
-new_float normal
-
-hide_edge_borders none
-
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
-
 font pango:Hack 8
 
 floating_modifier $mod
@@ -129,14 +120,13 @@ workspace $ws9 output DP-1-2
 exec --no-startup-id xrandr --output DP-1-2 --right-of eDP-1 --output DP-1-1 --left-of eDP-1
 
 # Assign Workspaces:
-assign [class="Chromium-browser"] $ws9
+assign [class="Google-chrome"] $ws9
 assign [class="Code"] $ws1
-assign [class="GitKraken"] $ws3
 assign [class="Slack"] $ws2
 assign [class="Tilix"] $ws8
 
 exec killall -q gdm
-exec chromium-browser
+exec google-chrome
 exec code
 exec slack
 exec tilix
@@ -202,8 +192,10 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
-
+bar {
+  font pango:DejaVu Sans Mono 12
+  status_command i3blocks
+}
 # Theme colors
 #client.focused #c5c8c6 #1d1f21 #c5c8c6 #81a2be #81a2be
 #client.focused_inactive #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
@@ -213,48 +205,6 @@ exec_always --no-startup-id /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
 
 client.background #1d1f21
 
-# Gaps
-gaps inner 10
-gaps outer -4
-
-smart_gaps on
-
-# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
 # set primary gruvbox colorscheme colors
 set $bg #282828
 set $red #cc241d

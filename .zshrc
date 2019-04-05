@@ -18,11 +18,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export HSTR_CONFIG=keywords-matching,hicolor,prompt-bottom
+export CLUBHOUSE_TOKEN="5ca721b7-3344-46d6-9295-d9a4f4aa3388"
 # Aliases
 alias aptupgrade="sudo apt update -y;sudo apt full-upgrade -y; sudo apt autoremove -y"
 alias sshout="ssh -i files/staging/ssh_keys/mta-staging-common.key core@ec2-52-50-178-80.eu-west-1.compute.amazonaws.com"
 alias sshjou="ssh -i files/staging/ssh_keys/mta-staging-common.key core@ec2-34-245-246-119.eu-west-1.compute.amazonaws.com"
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 alias deploy12="ansible-playbook mta-tenant.yml -e ENVIRONMENT=staging -e TENANT=quivertest12"
 alias la='ls -alF'
 alias hh='hstr'
