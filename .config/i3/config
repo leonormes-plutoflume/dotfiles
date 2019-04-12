@@ -66,8 +66,8 @@ set $ws1 "1: Code"
 set $ws2 "2: Slack"
 set $ws3 "3: GitKraken"
 set $ws4 "4:"
-set $ws5 "5"
-set $ws6 "6:"
+set $ws5 "5: Thunderbird"
+set $ws6 "6: Spotify"
 set $ws7 "7"
 set $ws8 "8: Terminal"
 set $ws9 "9: Chromium"
@@ -124,12 +124,15 @@ assign [class="Google-chrome"] $ws9
 assign [class="Code"] $ws1
 assign [class="Slack"] $ws2
 assign [class="Tilix"] $ws8
+assign [class="Spotify"] $ws6
+assign [class="Thunderbird"] $ws5
 
 exec killall -q gdm
 exec google-chrome
 exec code
 exec slack
 exec tilix
+exec thunderbird
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
